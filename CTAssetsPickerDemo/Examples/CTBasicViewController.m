@@ -97,10 +97,11 @@
             
             // set delegate
             picker.delegate = self;
-            
+            picker.cancelButtonTitle = @"hihi";
+            picker.hideDoneButton = YES;
             // to present picker as a form sheet in iPad
             if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-                picker.modalPresentationStyle = UIModalPresentationFormSheet;
+                picker.modalPresentationStyle = UIModalPresentationPageSheet;
             
             // present picker
             [self presentViewController:picker animated:YES completion:nil];

@@ -93,6 +93,18 @@
 @property (nonatomic, copy) NSString *doneButtonTitle;
 
 /**
+ *  Determines whether or not the done button is visible in the picker.
+ */
+@property (nonatomic, assign) BOOL hideDoneButton;
+
+/**
+ *  An optional title for the cancel button
+ *
+ *  You can override the title of "Cancel" button by this value.
+ */
+@property (nonatomic, copy) NSString *cancelButtonTitle;
+
+/**
  *  Determines whether or not the cancel button is visible in the picker.
  *
  *  The cancel button is visible by default. To hide the cancel button, (e.g. presenting the picker in `UIPopoverController`)

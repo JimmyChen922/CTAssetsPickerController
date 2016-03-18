@@ -176,7 +176,7 @@ NSString * const CTAssetsGridViewFooterIdentifier = @"CTAssetsGridViewFooterIden
 
 - (void)setupButtons
 {
-    if (self.navigationItem.rightBarButtonItem == nil)
+    if (self.navigationItem.rightBarButtonItem == nil && !self.picker.hideDoneButton)
     {
         NSString *title = (self.picker.doneButtonTitle) ?
         self.picker.doneButtonTitle : CTAssetsPickerLocalizedString(@"Done", nil);

@@ -159,8 +159,11 @@
     
     if (self.cancelButton == nil)
     {
+        NSString *cancelTitle = (self.picker.cancelButtonTitle) ?
+        self.picker.cancelButtonTitle : CTAssetsPickerLocalizedString(@"Cancel", nil);
+
         self.cancelButton =
-        [[UIBarButtonItem alloc] initWithTitle:CTAssetsPickerLocalizedString(@"Cancel", nil)
+        [[UIBarButtonItem alloc] initWithTitle:cancelTitle
                                          style:UIBarButtonItemStylePlain
                                         target:self.picker
                                         action:@selector(dismiss:)];
@@ -344,7 +347,11 @@
 - (void)updateButton:(NSArray *)selectedAssets
 {
     self.navigationItem.leftBarButtonItem = (self.picker.showsCancelButton) ? self.cancelButton : nil;
-    self.navigationItem.rightBarButtonItem = [self isTopViewController] ? self.doneButton : nil;
+    if (self.picker.hideDoneButton) {
+        self.navigationItem.rightBarButtonItem = nil;
+    }else{
+        self.navigationItem.rightBarButtonItem = [self isTopViewController] ? self.doneButton : nil;
+    }
     
     if (self.picker.alwaysEnableDoneButton)
         self.navigationItem.rightBarButtonItem.enabled = YES;

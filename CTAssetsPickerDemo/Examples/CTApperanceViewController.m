@@ -62,7 +62,7 @@
     self.color2 = [UIColor colorWithRed:60.0/255.0 green:71.0/255.0 blue:75.0/255.0 alpha:1];
     self.color3 = [UIColor colorWithWhite:0.9 alpha:1];
     self.font   = [UIFont fontWithName:@"Futura-Medium" size:22.0];
-
+    
     // Navigation Bar apperance
     UINavigationBar *navBar = [UINavigationBar appearanceWhenContainedIn:[CTAssetsPickerController class], nil];
     
@@ -101,7 +101,7 @@
     assetCollectionViewCell.selectedAccessoryColor = self.color2;
     assetCollectionViewCell.backgroundColor = self.color3;
     assetCollectionViewCell.selectedBackgroundColor = [self.color1 colorWithAlphaComponent:0.4];
-
+    
     // grid view
     CTAssetsGridView *assetsGridView = [CTAssetsGridView appearance];
     assetsGridView.gridBackgroundColor = self.color3;
@@ -163,7 +163,7 @@
     
     UIBarButtonItem *barButtonItem = [UIBarButtonItem appearanceWhenContainedIn:[CTAssetsPickerController class], nil];
     [barButtonItem setTitleTextAttributes:nil
-                                      forState:UIControlStateNormal];
+                                 forState:UIControlStateNormal];
     
     UITableView *assetCollectionView = [UITableView appearanceWhenContainedIn:[CTAssetsPickerController class], nil];
     assetCollectionView.backgroundColor = [UIColor whiteColor];
